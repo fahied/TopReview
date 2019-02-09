@@ -8,6 +8,8 @@
 
 import UIKit
 import FontAwesome_swift
+import ELPickerView
+
 
 class ReviewsViewController: UIViewController, AlertDisplayable {
 
@@ -16,6 +18,14 @@ class ReviewsViewController: UIViewController, AlertDisplayable {
 
     @IBOutlet weak var totalReviewsLabel: UILabel!
     @IBOutlet weak var sortByButton: UIButton!
+   
+    lazy var customPickerView: ELCustomPickerView<String> = {
+        return ELCustomPickerView<String>(pickerType: .singleComponent, items: [
+            "Date",
+            "Rating",
+            "Most Helpful"])
+    }()
+    
     //TODO: viewModel should be injected for now we ll initialize in viewDidLoad
     private var viewModel: ReviewsViewModel!
     let request = ReviewRequest.from(cityCode: "berlin-l17", postId: "tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776")
@@ -35,7 +45,19 @@ class ReviewsViewController: UIViewController, AlertDisplayable {
     
     
     @IBAction func sortButtonPressed(_ sender: Any) {
-        print("button pressed")
+        customPickerView.leftButton.setTitle("Cancel", for: .normal)
+        customPickerView.rightButton.setTitle("Done", for: .normal)
+        customPickerView.title.text = "Select"
+    
+        customPickerView.rightButtoTapHandler = {(view, chosenIndex, chosenItem) -> (shouldHide: Bool, animated: Bool) in
+            let hide = true
+            let animated = true
+            let text = "Did Tap Right Button. <Index: \(chosenIndex)> <chosenItem: \(chosenItem)> <Hide: \(hide)> <Animated: \(animated)>"
+            print(text)
+            return (hide, animated)
+        }
+        
+        customPickerView.show(viewController: nil, animated: true)
     }
 }
 

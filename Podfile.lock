@@ -1,16 +1,20 @@
 PODS:
+  - ELPickerView (4.0.1)
   - FontAwesome.swift (1.4.8)
 
 DEPENDENCIES:
+  - ELPickerView
   - FontAwesome.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ELPickerView
     - FontAwesome.swift
 
 SPEC CHECKSUMS:
+  ELPickerView: ce65935adf93baa0db81b20cd097410c47c1aaf5
   FontAwesome.swift: fb8637bffb9a588c7e8c753c084565b27b20a39d
 
-PODFILE CHECKSUM: 17584caa9571ce417b92fb98e275fd123d578c3c
+PODFILE CHECKSUM: aab909ce0b0a6dfa9ed15d2ad89ef918e9ca279b
 
 COCOAPODS: 1.5.3

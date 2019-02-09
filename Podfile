@@ -7,6 +7,7 @@ target 'TopReview' do
 
   # Pods for TopReview
   pod 'FontAwesome.swift'
+  pod 'ELPickerView'
   
   target 'TopReviewTests' do
     inherit! :search_paths
