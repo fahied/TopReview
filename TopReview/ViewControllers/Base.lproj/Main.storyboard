@@ -58,9 +58,37 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rg1-ea-kKi">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="dJc-Hf-KgC" userLabel="header">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65001 Reviews &amp; Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-ZD-p1e">
+                                            <rect key="frame" x="16" y="16" width="154" height="15.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUQ-Lw-E3Y">
+                                            <rect key="frame" x="204" y="9.3333333333333357" width="155" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="Sort by Most Helpful  ▽"/>
+                                            <connections>
+                                                <action selector="sortButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="d22-pU-gXV"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="wUQ-Lw-E3Y" secondAttribute="trailing" constant="16" id="0aE-U3-jQm"/>
+                                        <constraint firstItem="wUQ-Lw-E3Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D9p-ZD-p1e" secondAttribute="trailing" constant="8" symbolic="YES" id="91M-il-5yz"/>
+                                        <constraint firstItem="wUQ-Lw-E3Y" firstAttribute="centerY" secondItem="D9p-ZD-p1e" secondAttribute="centerY" id="NKA-6t-cYX"/>
+                                        <constraint firstItem="D9p-ZD-p1e" firstAttribute="leading" secondItem="dJc-Hf-KgC" secondAttribute="leading" constant="16" id="ccY-QH-ORY"/>
+                                        <constraint firstItem="D9p-ZD-p1e" firstAttribute="top" secondItem="dJc-Hf-KgC" secondAttribute="top" constant="16" id="wd3-5G-mE9"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="200" id="b6W-LQ-NTI" customClass="ReviewCell" customModule="TopReview" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b6W-LQ-NTI" id="lhu-l9-VgJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -205,7 +233,9 @@
                     <navigationItem key="navigationItem" title="Ratings &amp; Reviews" id="3fE-Vl-Uln"/>
                     <connections>
                         <outlet property="indicatorView" destination="M0a-D7-xZA" id="86E-nj-N1t"/>
+                        <outlet property="sortByButton" destination="wUQ-Lw-E3Y" id="7mw-bR-CTD"/>
                         <outlet property="tableView" destination="rg1-ea-kKi" id="joa-fZ-SUp"/>
+                        <outlet property="totalReviewsLabel" destination="D9p-ZD-p1e" id="PSc-hz-zoa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

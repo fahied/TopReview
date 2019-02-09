@@ -14,6 +14,8 @@ class ReviewsViewController: UIViewController, AlertDisplayable {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
 
+    @IBOutlet weak var totalReviewsLabel: UILabel!
+    @IBOutlet weak var sortByButton: UIButton!
     //TODO: viewModel should be injected for now we ll initialize in viewDidLoad
     private var viewModel: ReviewsViewModel!
     let request = ReviewRequest.from(cityCode: "berlin-l17", postId: "tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776")
@@ -22,11 +24,18 @@ class ReviewsViewController: UIViewController, AlertDisplayable {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        totalReviewsLabel.text = ""
+        sortByButton.isHidden = true
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         tableView.prefetchDataSource = self
         viewModel = ReviewsViewModel(request: request, delegate: self)
         viewModel.fetchReviews()
+    }
+    
+    
+    @IBAction func sortButtonPressed(_ sender: Any) {
+        print("button pressed")
     }
 }
 
@@ -59,13 +68,19 @@ extension ReviewsViewController: UITableViewDataSourcePrefetching {
 //MARK: - ReviewsViewModelDelegate
 extension ReviewsViewController: ReviewsViewModelDelegate {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        // Update totoal rating count:
+        if viewModel.totalCount > 0 {
+            totalReviewsLabel.text = "\(viewModel.totalCount) Reviews & Ratings"
+            sortByButton.isHidden = false
+        }
+        
         indicatorView.isHidden = true
         guard let newIndexPathsToReload = newIndexPathsToReload else {
             tableView.isHidden = false
             tableView.reloadData()
             return
         }
-        
+
         let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
         tableView.reloadRows(at: indexPathsToReload, with: .automatic)
     }
