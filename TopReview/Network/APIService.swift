@@ -8,53 +8,64 @@
 
 import Foundation
 
-enum Result<T, U: Error> {
-    case success(T)
-    case failure(U)
+protocol APIService {
+    var session: URLSession { get }
+    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>) -> Void)
 }
 
-enum DataResponseError: Error {
-    case network
-    case decoding
-    
-    var reason: String {
-        switch self {
-        case .network:
-            return "An error occurred while fetching data "
-        case .decoding:
-            return "An error occurred while decoding data"
-        }
-    }
-}
 
-class APIService {
+extension APIService {
     
-    private lazy var baseURL: URL = {
-        return URL(string: "https://www.getyourguide.com/")!
-    }()
+    typealias JSONTaskCompletionHandler = (Decodable?, APIError?) -> Void
     
-    private let session: URLSession
-    
-    init(session: URLSession = URLSession.shared) {
-        self.session = session
-    }
-    
-    func fetchReviews(with request: ReviewRequest, page: Int, completion: @escaping (Result<PagedReviewsResponse, DataResponseError>) -> Void) {
-        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.path))
-        let parameters = ["page": "\(page)"].merging(request.parameters, uniquingKeysWith: +)
-        let encodedURLRequest = urlRequest.encode(with: parameters)
-        session.dataTask(with: encodedURLRequest, completionHandler: { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse,
-                httpResponse.hasSuccessStatusCode, let data = data else {
-                    completion(Result.failure(DataResponseError.network))
-                    return
-            }
-            guard let decodedResponse = try? JSONDecoder().decode(PagedReviewsResponse.self, from: data) else {
-                completion(Result.failure(DataResponseError.decoding))
+    func decodingTask<T: Decodable>(with request: URLRequest, decodingType: T.Type, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
+        
+        let task = session.dataTask(with: request) { data, response, error in
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(nil, .requestFailed)
                 return
             }
-            completion(Result.success(decodedResponse))
-        }).resume()
+            if httpResponse.statusCode == 200 {
+                if let data = data {
+                    do {
+                        let genericModel = try JSONDecoder().decode(decodingType, from: data)
+                        completion(genericModel, nil)
+                    } catch {
+                        completion(nil, .jsonConversionFailure)
+                    }
+                } else {
+                    completion(nil, .invalidData)
+                }
+            } else {
+                completion(nil, .responseUnsuccessful)
+            }
+        }
+        return task
+    }
+    
+    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>) -> Void) {
+        
+        let task = decodingTask(with: request, decodingType: T.self) { (json , error) in
+            
+            //MARK: change to main queue
+            DispatchQueue.main.async {
+                guard let json = json else {
+                    if let error = error {
+                        completion(Result.failure(error))
+                    } else {
+                        completion(Result.failure(.invalidData))
+                    }
+                    return
+                }
+                if let value = decode(json) {
+                    completion(.success(value))
+                } else {
+                    completion(.failure(.jsonParsingFailure))
+                }
+            }
+        }
+        task.resume()
     }
 }
 

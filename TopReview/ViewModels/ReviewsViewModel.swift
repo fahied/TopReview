@@ -20,7 +20,7 @@ final class ReviewsViewModel {
     private var isFetchInProgress = false
     private var currentPage = 0
     private var total = 0
-    private let apiService = APIService()
+    private let reviewAPI = ReviewAPIService()
     private let request: ReviewRequest
     
     
@@ -40,8 +40,7 @@ final class ReviewsViewModel {
         guard !isFetchInProgress else { return }
         
         isFetchInProgress = true
-        //TODO: Replace API code with Repository Pattern
-        apiService.fetchReviews(with: request, page: currentPage) { result in
+        reviewAPI.fetch(with: request, page: currentPage) { result in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -50,6 +49,7 @@ final class ReviewsViewModel {
                 }
             case .success(let response):
                 DispatchQueue.main.async {
+                    guard let response = response else {self.delegate?.onFetchCompleted(with: .none); return}
                     self.currentPage += 1
                     self.isFetchInProgress = false
                     self.total = response.total

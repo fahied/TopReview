@@ -11,9 +11,12 @@
 		4E301D2307DD2AF39DD1CCFC /* Pods_TopReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BFAA24E7EAE2CF87732889 /* Pods_TopReview.framework */; };
 		5BACAA5A220DF28000CFABEC /* UITableViewCell+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA59220DF28000CFABEC /* UITableViewCell+Protocols.swift */; };
 		5BACAA5F220E17D600CFABEC /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA5E220E17D600CFABEC /* ReviewsViewModel.swift */; };
-		5BACAA61220E1A3200CFABEC /* PagedReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA60220E1A3100CFABEC /* PagedReviewResponse.swift */; };
+		5BACAA61220E1A3200CFABEC /* PagedReviewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA60220E1A3100CFABEC /* PagedReviewsResponse.swift */; };
 		5BACAA63220E1DAE00CFABEC /* ReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA62220E1DAE00CFABEC /* ReviewRequest.swift */; };
 		5BACAA65220E24A900CFABEC /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA64220E24A900CFABEC /* AlertDisplayable.swift */; };
+		5BACAA67220ED40D00CFABEC /* ReviewAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA66220ED40D00CFABEC /* ReviewAPIService.swift */; };
+		5BACAA69220ED53A00CFABEC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA68220ED53A00CFABEC /* Result.swift */; };
+		5BACAA6B220ED55D00CFABEC /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA6A220ED55D00CFABEC /* APIError.swift */; };
 		5BBEC4A7220CA618004DBD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4A6220CA618004DBD18 /* AppDelegate.swift */; };
 		5BBEC4A9220CA618004DBD18 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4A8220CA618004DBD18 /* FirstViewController.swift */; };
 		5BBEC4AE220CA618004DBD18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBEC4AC220CA618004DBD18 /* Main.storyboard */; };
@@ -56,9 +59,12 @@
 		069173227129C52B7361DD47 /* Pods-TopReview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopReview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopReview/Pods-TopReview.debug.xcconfig"; sourceTree = "<group>"; };
 		5BACAA59220DF28000CFABEC /* UITableViewCell+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Protocols.swift"; sourceTree = "<group>"; };
 		5BACAA5E220E17D600CFABEC /* ReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
-		5BACAA60220E1A3100CFABEC /* PagedReviewResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedReviewResponse.swift; sourceTree = "<group>"; };
+		5BACAA60220E1A3100CFABEC /* PagedReviewsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedReviewsResponse.swift; sourceTree = "<group>"; };
 		5BACAA62220E1DAE00CFABEC /* ReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequest.swift; sourceTree = "<group>"; };
 		5BACAA64220E24A900CFABEC /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
+		5BACAA66220ED40D00CFABEC /* ReviewAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAPIService.swift; sourceTree = "<group>"; };
+		5BACAA68220ED53A00CFABEC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5BACAA6A220ED55D00CFABEC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5BBEC4A3220CA618004DBD18 /* TopReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBEC4A6220CA618004DBD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BBEC4A8220CA618004DBD18 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -235,9 +241,12 @@
 		5BBEC4E5220D85EC004DBD18 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5BACAA60220E1A3100CFABEC /* PagedReviewResponse.swift */,
 				5BBEC4E6220D8605004DBD18 /* APIService.swift */,
+				5BACAA66220ED40D00CFABEC /* ReviewAPIService.swift */,
 				5BACAA62220E1DAE00CFABEC /* ReviewRequest.swift */,
+				5BACAA60220E1A3100CFABEC /* PagedReviewsResponse.swift */,
+				5BACAA68220ED53A00CFABEC /* Result.swift */,
+				5BACAA6A220ED55D00CFABEC /* APIError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -514,15 +523,18 @@
 			files = (
 				5BBEC4E7220D8605004DBD18 /* APIService.swift in Sources */,
 				5BBEC4F4220DB5C6004DBD18 /* String+Extension.swift in Sources */,
+				5BACAA69220ED53A00CFABEC /* Result.swift in Sources */,
 				5BACAA5F220E17D600CFABEC /* ReviewsViewModel.swift in Sources */,
 				5BBEC4EE220D8FD6004DBD18 /* Observable.swift in Sources */,
 				5BBEC4D9220CBABF004DBD18 /* ReviewCell.swift in Sources */,
 				5BBEC4A7220CA618004DBD18 /* AppDelegate.swift in Sources */,
-				5BACAA61220E1A3200CFABEC /* PagedReviewResponse.swift in Sources */,
+				5BACAA67220ED40D00CFABEC /* ReviewAPIService.swift in Sources */,
+				5BACAA61220E1A3200CFABEC /* PagedReviewsResponse.swift in Sources */,
 				5BBEC4E1220D7F7B004DBD18 /* ReviewViewModel.swift in Sources */,
 				5BBEC4FA220DB698004DBD18 /* UIView+Extension.swift in Sources */,
 				5BBEC4E9220D8B02004DBD18 /* ReviewsViewController.swift in Sources */,
 				5BACAA5A220DF28000CFABEC /* UITableViewCell+Protocols.swift in Sources */,
+				5BACAA6B220ED55D00CFABEC /* APIError.swift in Sources */,
 				5BBEC4F6220DB5F9004DBD18 /* NSAttributedString+Extension.swift in Sources */,
 				5BACAA63220E1DAE00CFABEC /* ReviewRequest.swift in Sources */,
 				5BACAA65220E24A900CFABEC /* AlertDisplayable.swift in Sources */,
