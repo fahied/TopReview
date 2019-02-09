@@ -1,5 +1,5 @@
 //
-//  PagedReviews.swift
+//  PagedReviewsResponse.swift
 //  TopReview
 //
 //  Created by Muhammad Fahied on 2/8/19.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct PagedReviews : Codable {
-    
+struct PagedReviewsResponse : Decodable {
     let status: Bool
     let total: Int
     let reviews: [Review]

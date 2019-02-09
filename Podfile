@@ -7,8 +7,7 @@ target 'TopReview' do
 
   # Pods for TopReview
   pod 'FontAwesome.swift'
-  pod 'Alamofire'
-
+  
   target 'TopReviewTests' do
     inherit! :search_paths
     # Pods for testing

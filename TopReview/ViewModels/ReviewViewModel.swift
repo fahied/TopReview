@@ -9,13 +9,13 @@
 import Foundation
 import FontAwesome_swift
 
-class ReviewCellViewModel {
+class ReviewViewModel {
     let rating: NSAttributedString
     let title: String
     let message: String
     let author: String
     let date: String
-    let isHelpful:Observable<Bool>
+    var isHelpful = false
     let backgroundColor: UIColor
     
     init(review: Review) {
@@ -24,7 +24,6 @@ class ReviewCellViewModel {
         message = review.message
         author = review.author
         date = review.date.shortDate()
-        isHelpful = Observable(false)
         backgroundColor = .easyGrey
     }
 }

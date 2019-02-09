@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1A125A9E375A80784D63436F /* Pods_TopReviewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2077B466C7EAD495CE34CC /* Pods_TopReviewUITests.framework */; };
 		4E301D2307DD2AF39DD1CCFC /* Pods_TopReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BFAA24E7EAE2CF87732889 /* Pods_TopReview.framework */; };
+		5BACAA5A220DF28000CFABEC /* UITableViewCell+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA59220DF28000CFABEC /* UITableViewCell+Protocols.swift */; };
+		5BACAA5F220E17D600CFABEC /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA5E220E17D600CFABEC /* ReviewsViewModel.swift */; };
+		5BACAA61220E1A3200CFABEC /* PagedReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA60220E1A3100CFABEC /* PagedReviewResponse.swift */; };
+		5BACAA63220E1DAE00CFABEC /* ReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA62220E1DAE00CFABEC /* ReviewRequest.swift */; };
+		5BACAA65220E24A900CFABEC /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BACAA64220E24A900CFABEC /* AlertDisplayable.swift */; };
 		5BBEC4A7220CA618004DBD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4A6220CA618004DBD18 /* AppDelegate.swift */; };
 		5BBEC4A9220CA618004DBD18 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4A8220CA618004DBD18 /* FirstViewController.swift */; };
 		5BBEC4AE220CA618004DBD18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBEC4AC220CA618004DBD18 /* Main.storyboard */; };
@@ -18,13 +23,11 @@
 		5BBEC4C9220CA61A004DBD18 /* TopReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4C8220CA61A004DBD18 /* TopReviewUITests.swift */; };
 		5BBEC4D7220CABA8004DBD18 /* img.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5BBEC4D6220CABA7004DBD18 /* img.jpeg */; };
 		5BBEC4D9220CBABF004DBD18 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4D8220CBABF004DBD18 /* ReviewCell.swift */; };
-		5BBEC4E1220D7F7B004DBD18 /* ReviewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4E0220D7F7B004DBD18 /* ReviewCellViewModel.swift */; };
+		5BBEC4E1220D7F7B004DBD18 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4E0220D7F7B004DBD18 /* ReviewViewModel.swift */; };
 		5BBEC4E4220D8042004DBD18 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4E3220D8042004DBD18 /* Review.swift */; };
 		5BBEC4E7220D8605004DBD18 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4E6220D8605004DBD18 /* APIService.swift */; };
 		5BBEC4E9220D8B02004DBD18 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4E8220D8B02004DBD18 /* ReviewsViewController.swift */; };
-		5BBEC4EB220D8B1A004DBD18 /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4EA220D8B1A004DBD18 /* ReviewsViewModel.swift */; };
 		5BBEC4EE220D8FD6004DBD18 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4ED220D8FD6004DBD18 /* Observable.swift */; };
-		5BBEC4F1220D9E69004DBD18 /* PagedReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4F0220D9E69004DBD18 /* PagedReviews.swift */; };
 		5BBEC4F4220DB5C6004DBD18 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4F3220DB5C6004DBD18 /* String+Extension.swift */; };
 		5BBEC4F6220DB5F9004DBD18 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4F5220DB5F9004DBD18 /* NSAttributedString+Extension.swift */; };
 		5BBEC4F8220DB650004DBD18 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC4F7220DB650004DBD18 /* UIColor+Extension.swift */; };
@@ -51,6 +54,11 @@
 
 /* Begin PBXFileReference section */
 		069173227129C52B7361DD47 /* Pods-TopReview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopReview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopReview/Pods-TopReview.debug.xcconfig"; sourceTree = "<group>"; };
+		5BACAA59220DF28000CFABEC /* UITableViewCell+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Protocols.swift"; sourceTree = "<group>"; };
+		5BACAA5E220E17D600CFABEC /* ReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
+		5BACAA60220E1A3100CFABEC /* PagedReviewResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedReviewResponse.swift; sourceTree = "<group>"; };
+		5BACAA62220E1DAE00CFABEC /* ReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequest.swift; sourceTree = "<group>"; };
+		5BACAA64220E24A900CFABEC /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		5BBEC4A3220CA618004DBD18 /* TopReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBEC4A6220CA618004DBD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BBEC4A8220CA618004DBD18 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -66,13 +74,11 @@
 		5BBEC4CA220CA61A004DBD18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBEC4D6220CABA7004DBD18 /* img.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.jpeg; sourceTree = "<group>"; };
 		5BBEC4D8220CBABF004DBD18 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
-		5BBEC4E0220D7F7B004DBD18 /* ReviewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCellViewModel.swift; sourceTree = "<group>"; };
+		5BBEC4E0220D7F7B004DBD18 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		5BBEC4E3220D8042004DBD18 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		5BBEC4E6220D8605004DBD18 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5BBEC4E8220D8B02004DBD18 /* ReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
-		5BBEC4EA220D8B1A004DBD18 /* ReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
 		5BBEC4ED220D8FD6004DBD18 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		5BBEC4F0220D9E69004DBD18 /* PagedReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedReviews.swift; sourceTree = "<group>"; };
 		5BBEC4F3220DB5C6004DBD18 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5BBEC4F5220DB5F9004DBD18 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		5BBEC4F7220DB650004DBD18 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -115,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BACAA58220DF24000CFABEC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5BACAA59220DF28000CFABEC /* UITableViewCell+Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5BBEC49A220CA618004DBD18 = {
 			isa = PBXGroup;
 			children = (
@@ -140,14 +154,15 @@
 		5BBEC4A5220CA618004DBD18 /* TopReview */ = {
 			isa = PBXGroup;
 			children = (
+				5BACAA58220DF24000CFABEC /* Protocols */,
 				5BBEC4DD220D7F17004DBD18 /* App */,
 				5BBEC4DE220D7F1C004DBD18 /* ViewControllers */,
 				5BBEC4DF220D7F43004DBD18 /* Views */,
 				5BBEC4DC220D7F10004DBD18 /* ViewModels */,
 				5BBEC4E2220D8017004DBD18 /* Models */,
 				5BBEC4F2220DB5AC004DBD18 /* Extensions */,
+				5BBEC4E5220D85EC004DBD18 /* Network */,
 				5BBEC4EC220D8FC0004DBD18 /* Utils */,
-				5BBEC4E5220D85EC004DBD18 /* Services */,
 				5BBEC4AF220CA619004DBD18 /* Assets.xcassets */,
 				5BBEC4D6220CABA7004DBD18 /* img.jpeg */,
 				5BBEC4B1220CA619004DBD18 /* LaunchScreen.storyboard */,
@@ -177,8 +192,8 @@
 		5BBEC4DC220D7F10004DBD18 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5BBEC4E0220D7F7B004DBD18 /* ReviewCellViewModel.swift */,
-				5BBEC4EA220D8B1A004DBD18 /* ReviewsViewModel.swift */,
+				5BBEC4E0220D7F7B004DBD18 /* ReviewViewModel.swift */,
+				5BACAA5E220E17D600CFABEC /* ReviewsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -217,29 +232,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5BBEC4E5220D85EC004DBD18 /* Services */ = {
+		5BBEC4E5220D85EC004DBD18 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5BBEC4EF220D9E46004DBD18 /* ResponseModel */,
+				5BACAA60220E1A3100CFABEC /* PagedReviewResponse.swift */,
 				5BBEC4E6220D8605004DBD18 /* APIService.swift */,
+				5BACAA62220E1DAE00CFABEC /* ReviewRequest.swift */,
 			);
-			path = Services;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5BBEC4EC220D8FC0004DBD18 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				5BBEC4ED220D8FD6004DBD18 /* Observable.swift */,
+				5BACAA64220E24A900CFABEC /* AlertDisplayable.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		5BBEC4EF220D9E46004DBD18 /* ResponseModel */ = {
-			isa = PBXGroup;
-			children = (
-				5BBEC4F0220D9E69004DBD18 /* PagedReviews.swift */,
-			);
-			path = ResponseModel;
 			sourceTree = "<group>";
 		};
 		5BBEC4F2220DB5AC004DBD18 /* Extensions */ = {
@@ -439,14 +448,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TopReview/Pods-TopReview-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,15 +514,18 @@
 			files = (
 				5BBEC4E7220D8605004DBD18 /* APIService.swift in Sources */,
 				5BBEC4F4220DB5C6004DBD18 /* String+Extension.swift in Sources */,
+				5BACAA5F220E17D600CFABEC /* ReviewsViewModel.swift in Sources */,
 				5BBEC4EE220D8FD6004DBD18 /* Observable.swift in Sources */,
 				5BBEC4D9220CBABF004DBD18 /* ReviewCell.swift in Sources */,
-				5BBEC4EB220D8B1A004DBD18 /* ReviewsViewModel.swift in Sources */,
 				5BBEC4A7220CA618004DBD18 /* AppDelegate.swift in Sources */,
-				5BBEC4F1220D9E69004DBD18 /* PagedReviews.swift in Sources */,
-				5BBEC4E1220D7F7B004DBD18 /* ReviewCellViewModel.swift in Sources */,
+				5BACAA61220E1A3200CFABEC /* PagedReviewResponse.swift in Sources */,
+				5BBEC4E1220D7F7B004DBD18 /* ReviewViewModel.swift in Sources */,
 				5BBEC4FA220DB698004DBD18 /* UIView+Extension.swift in Sources */,
 				5BBEC4E9220D8B02004DBD18 /* ReviewsViewController.swift in Sources */,
+				5BACAA5A220DF28000CFABEC /* UITableViewCell+Protocols.swift in Sources */,
 				5BBEC4F6220DB5F9004DBD18 /* NSAttributedString+Extension.swift in Sources */,
+				5BACAA63220E1DAE00CFABEC /* ReviewRequest.swift in Sources */,
+				5BACAA65220E24A900CFABEC /* AlertDisplayable.swift in Sources */,
 				5BBEC4F8220DB650004DBD18 /* UIColor+Extension.swift in Sources */,
 				5BBEC4A9220CA618004DBD18 /* FirstViewController.swift in Sources */,
 				5BBEC4E4220D8042004DBD18 /* Review.swift in Sources */,
